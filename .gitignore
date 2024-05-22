@@ -66,6 +66,9 @@ ehthumbs.db
 .yarn/*
 .pnp.*
 
+# ENV
+config.js
+
 # Storybook files
 storybook-static
 
