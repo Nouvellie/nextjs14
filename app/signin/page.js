@@ -2,7 +2,7 @@
 import { set } from "mongoose";
 import { useState } from "react";
 import toast from 'react-hot-toast';
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { signIn } from 'next-auth/react';
 
 export default function SignIn() {
@@ -10,6 +10,8 @@ export default function SignIn() {
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const callbackUrl = searchParams.get('callbackUrl') || "/";
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -25,7 +27,8 @@ export default function SignIn() {
                 setLoading(false);
             } else {
                 toast.success("Connected.");
-                router.push("/");
+                // router.push("/");
+                router.push(callbackUrl);
             }
         } catch (err) {
             console.log(err);
