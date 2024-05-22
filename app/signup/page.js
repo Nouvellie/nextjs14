@@ -15,7 +15,6 @@ export default function SignUp() {
         e.preventDefault();
         try {
             setLoading(true);
-            console.log("errrrror",`${process.env.API}/signup`,);
             const response = await fetch(`${process.env.API}/signup`, {
                 method: "POST",
                 headers: {
@@ -29,16 +28,14 @@ export default function SignUp() {
             });
             const data = await response.json();
             if(!response.ok) {
-                console.log("err1");
                 toast.error(data.err);
                 setLoading(false);
             } else {
-                console.log("err2");
-                toast.success(data.message);
+                toast.success(data.success);
                 setLoading(false);
+                router.push("/signin");
             }
         } catch (err) {
-            console.log(err);
             router.push("/signin");
         }
     };

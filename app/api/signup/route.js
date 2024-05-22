@@ -13,9 +13,8 @@ export async function POST(req) {
             email,
             password: await bcrypt.hash(password, 12),
         }).save();
-        return NextResponse.json({success: "Successfully signed."}, {status: 200});
+        return NextResponse.json({ success: "Successfully signed."});
     } catch (err) {
-        console.log(err);
         return NextResponse.json({err: err.message}, {status: 500});
     }
 }

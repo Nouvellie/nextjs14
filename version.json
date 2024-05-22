@@ -1,6 +1,7 @@
 {
+    "0.0.7": {"All working", "Version file fixed."},
     "0.0.6": {"Redirect ready."},
-    "0.0.5": {"SignIn ready. (api and form)", "SignUp error."}
+    "0.0.5": {"SignIn ready. (api and form)", "SignUp error."},
     "0.0.4": {"SignUp ready."},
     "0.0.3": {"Config env.", "DB URI added."},
     "0.0.2": {"TopNav added."},
